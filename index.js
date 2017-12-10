@@ -96,7 +96,7 @@ module.exports = function (config, windowParams) {
     }).then(res => {
       res.json().then(function(data) {
           console.log("Response JSON: " + JSON.stringify(data).toString());
-          return data;
+          return JSON.stringify(data);
       });
     });
   }
