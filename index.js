@@ -74,7 +74,7 @@ module.exports = function (config, windowParams) {
   }
 
   function tokenRequest(data) {
-    console.log("TokenRequest Data: " + data);
+    console.log("TokenRequest Data: " + JSON.stringify(data).toString());
     const header = {
       'Accept': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -94,7 +94,7 @@ module.exports = function (config, windowParams) {
       headers: header,
       body: queryString.stringify(data)
     }).then(res => {
-      console.log("TokenRequest Fetch Response: " + res.json());
+      console.log("TokenRequest Fetch Response: " + JSON.stringify(res).toString());
       return res.json();
     });
   }
