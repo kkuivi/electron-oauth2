@@ -94,8 +94,10 @@ module.exports = function (config, windowParams) {
       headers: header,
       body: queryString.stringify(data)
     }).then(res => {
-      console.log("TokenRequest Fetch Response JSON: " + JSON.stringify(res.json()).toString());
-      return res.json();
+      res.json().then(function(data) {
+          console.log("Response JSON: " + JSON.stringify(data).toString());
+          return data;
+      });
     });
   }
 
